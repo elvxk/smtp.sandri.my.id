@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -89,12 +90,20 @@ export default function Home() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen container mx-auto">
-      <div className="w-full max-w-md p-6 border-black border shadow-md rounded-md mx-6">
+    <div className="flex items-center justify-center container mx-auto py-6">
+      <div className="w-full max-w-2xl p-6 border-black border shadow-md rounded-md mx-6">
+        <div className="flex justify-center ">
+          <Image
+            src="/smtpsen.webp"
+            height={100}
+            width={100}
+            alt="logo smtp sender"
+          />
+        </div>
         <h1 className="text-2xl font-bold text-center">SMTP Sender</h1>
         <p className="text-sm text-center mb-6">Check your SMTP connection</p>
         <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-2">
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Hostname</Label>
             <Input
               type="text"
@@ -102,11 +111,11 @@ export default function Home() {
               value={formData.hostname}
               onChange={handleChange}
               placeholder="smtp.domain.com"
-              className="col-span-2 w-full"
+              className="col-span-3 w-full"
               required
             />
           </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Sender Email</Label>
             <Input
               type="email"
@@ -114,11 +123,11 @@ export default function Home() {
               value={formData.senderEmail}
               onChange={handleChange}
               placeholder="sendermail@domain.com"
-              className="col-span-2 w-full"
+              className="col-span-3 w-full"
               required
             />
           </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Password</Label>
             <Input
               type="password"
@@ -126,11 +135,11 @@ export default function Home() {
               value={formData.password}
               onChange={handleChange}
               placeholder="email password"
-              className="col-span-2 w-full"
+              className="col-span-3 w-full"
               required
             />
           </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Target Email</Label>
             <Input
               type="email"
@@ -138,11 +147,11 @@ export default function Home() {
               value={formData.targetEmail}
               onChange={handleChange}
               placeholder="targetmail@domain.com"
-              className="col-span-2 w-full"
+              className="col-span-3 w-full"
               required
             />
           </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Port</Label>
             <Input
               type="number"
@@ -150,13 +159,13 @@ export default function Home() {
               value={formData.port}
               onChange={handleChange}
               placeholder="e.g., 465"
-              className="col-span-2 w-full"
+              className="col-span-3 w-full"
               required
             />
           </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:items-center sm:gap-2">
+          <div className="flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-2">
             <Label className="text-sm font-medium">Encryption</Label>
-            <div className="col-span-2">
+            <div className="col-span-3">
               <Select name="encryption" onValueChange={handleSelect}>
                 <SelectTrigger className="w-full border">
                   <SelectValue placeholder="Select Encryption" />
